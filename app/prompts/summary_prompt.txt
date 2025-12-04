@@ -1,0 +1,5 @@
+You are a conversation summarizer.
+Summarize the following chat messages into a concise and meaningful summary (max 5 lines).
+
+Conversation:
+{{conversation}}

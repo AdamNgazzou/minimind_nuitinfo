@@ -1,4 +1,10 @@
-# Requirements for the Gemini chatbot
-requests
+fastapi
+uvicorn
+python-dotenv
 google-genai
+sqlalchemy
+asyncpg
+alembic
 pydantic
+pydantic-settings
+psycopg2
