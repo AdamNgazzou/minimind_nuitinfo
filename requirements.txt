@@ -8,3 +8,7 @@ alembic
 pydantic
 pydantic-settings
 psycopg2
+torch
+torchvision
+pillow
+python-multipart
