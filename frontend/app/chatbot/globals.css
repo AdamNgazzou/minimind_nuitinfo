@@ -1,0 +1,382 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Dark navy retro pixel art style with pink accent */
+:root {
+  --background: #1a1a2e;
+  --foreground: #eaeaea;
+  --card: #16213e;
+  --card-foreground: #eaeaea;
+  --popover: #16213e;
+  --popover-foreground: #eaeaea;
+  --primary: #e94560;
+  --primary-foreground: #ffffff;
+  --secondary: #0f3460;
+  --secondary-foreground: #eaeaea;
+  --muted: #16213e;
+  --muted-foreground: #a0a0a0;
+  --accent: #e94560;
+  --accent-foreground: #ffffff;
+  --destructive: #e94560;
+  --destructive-foreground: #ffffff;
+  --border: #0f3460;
+  --input: #16213e;
+  --ring: #e94560;
+  --chart-1: #e94560;
+  --chart-2: #0f3460;
+  --chart-3: #16213e;
+  --chart-4: #1a1a2e;
+  --chart-5: #eaeaea;
+  --radius: 0px;
+  --sidebar: #0f3460;
+  --sidebar-foreground: #eaeaea;
+  --sidebar-primary: #e94560;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #16213e;
+  --sidebar-accent-foreground: #eaeaea;
+  --sidebar-border: #0f3460;
+  --sidebar-ring: #e94560;
+}
+
+@theme inline {
+  --font-sans: "Press Start 2P", monospace;
+  --font-mono: "Press Start 2P", monospace;
+  --font-pixel: "Press Start 2P", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Press Start 2P", monospace;
+  }
+}
+
+/* Updated pixel borders with dark navy colors */
+.pixel-border {
+  box-shadow: 0 -4px 0 0 #0f3460, 0 4px 0 0 #0f3460, -4px 0 0 0 #0f3460, 4px 0 0 0 #0f3460, -4px -4px 0 0 #0f3460, 4px
+    -4px 0 0 #0f3460, -4px 4px 0 0 #0f3460, 4px 4px 0 0 #0f3460;
+}
+
+.pixel-border-thin {
+  box-shadow: 0 -2px 0 0 #0f3460, 0 2px 0 0 #0f3460, -2px 0 0 0 #0f3460, 2px 0 0 0 #0f3460;
+}
+
+/* 3D pixel button with navy/pink theme */
+.pixel-button {
+  background: #16213e;
+  color: #eaeaea;
+  box-shadow: inset -4px -4px 0 0 #0f3460, inset 4px 4px 0 0 #1a1a2e, inset -8px -8px 0 0 #0a1628, inset 8px 8px 0 0
+    #1f2b4a;
+  border: 4px solid #e94560;
+  cursor: pointer;
+  transition: none;
+}
+
+.pixel-button:hover {
+  background: #1f2b4a;
+  box-shadow: inset -4px -4px 0 0 #0f3460, inset 4px 4px 0 0 #2a3a5a, inset -8px -8px 0 0 #0a1628, inset 8px 8px 0 0
+    #354569;
+}
+
+.pixel-button:active {
+  box-shadow: inset 4px 4px 0 0 #0f3460, inset -4px -4px 0 0 #1a1a2e, inset 8px 8px 0 0 #0a1628, inset -8px -8px 0 0
+    #1f2b4a;
+}
+
+/* Inset with navy colors */
+.pixel-inset {
+  background: #1a1a2e;
+  box-shadow: inset 4px 4px 0 0 #0a1020, inset -4px -4px 0 0 #16213e, inset 8px 8px 0 0 #050810;
+  border: 4px solid #0f3460;
+}
+
+/* Title bar with pink gradient */
+.pixel-titlebar {
+  background: linear-gradient(90deg, #e94560 0%, #c73e54 50%, #e94560 100%);
+  border-bottom: 4px solid #0f3460;
+}
+
+/* Pixel avatar with navy theme */
+.pixel-avatar {
+  image-rendering: pixelated;
+  background: #16213e;
+  border: 4px solid #e94560;
+  box-shadow: 4px 4px 0 0 #0f3460;
+}
+
+/* Message bubbles with navy/pink theme */
+.pixel-bubble {
+  border: 4px solid #0f3460;
+  box-shadow: 6px 6px 0 0 #0a1628;
+}
+
+.pixel-bubble-user {
+  background: #e94560;
+  color: #ffffff;
+  border-color: #c73e54;
+}
+
+.pixel-bubble-bot {
+  background: #16213e;
+  color: #eaeaea;
+}
+
+/* Scrollbar with navy theme */
+::-webkit-scrollbar {
+  width: 20px;
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-track {
+  background: #16213e;
+  border: 4px solid #0f3460;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0f3460;
+  border: 4px solid #e94560;
+  box-shadow: inset -4px -4px 0 0 #0a1628, inset 4px 4px 0 0 #16213e;
+}
+
+::-webkit-scrollbar-button {
+  background: #16213e;
+  border: 4px solid #0f3460;
+  height: 20px;
+}
+
+/* Dithered background with navy colors */
+.dither-bg {
+  background: repeating-conic-gradient(#1a1a2e 0% 25%, #16213e 0% 50%) 0 0 / 8px 8px;
+}
+
+/* Scanline effect */
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  pointer-events: none;
+}
+
+/* Added thinking/loading animation keyframes */
+@keyframes pixel-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes pixel-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pixel-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.thinking-dot {
+  animation: pixel-bounce 0.6s infinite;
+}
+
+.thinking-dot:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.thinking-dot:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.typing-cursor {
+  animation: pixel-blink 0.8s step-end infinite;
+}
+
+.message-appear {
+  animation: pixel-pulse 0.3s ease-out;
+}
+
+/* Retro background styles */
+.retro-grid {
+  background-color: #1a1a2e;
+  background-image: 
+    linear-gradient(0deg, transparent 24%, rgba(233, 69, 96, 0.05) 25%, rgba(233, 69, 96, 0.05) 26%, transparent 27%, transparent 74%, rgba(233, 69, 96, 0.05) 75%, rgba(233, 69, 96, 0.05) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(233, 69, 96, 0.05) 25%, rgba(233, 69, 96, 0.05) 26%, transparent 27%, transparent 74%, rgba(233, 69, 96, 0.05) 75%, rgba(233, 69, 96, 0.05) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+}
+
+/* Retro dither pattern background */
+.retro-dither {
+  background-color: #1a1a2e;
+  background-image: 
+    radial-gradient(circle at 1px 1px, #e94560 1px, transparent 1px);
+  background-size: 4px 4px;
+  background-position: 0 0;
+}
+
+/* Retro scanline background */
+.retro-scanlines {
+  background-color: #1a1a2e;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0) 2px,
+      rgba(233, 69, 96, 0.03) 2px,
+      rgba(233, 69, 96, 0.03) 4px
+    );
+  background-size: 100% 4px;
+}
+
+/* Retro wavy background */
+.retro-wave {
+  background: linear-gradient(45deg, #1a1a2e 0%, #16213e 20%, #0f3460 40%, #16213e 60%, #1a1a2e 80%, #1a1a2e 100%);
+  background-size: 400% 400%;
+  animation: retro-wave-shift 15s ease infinite;
+}
+
+@keyframes retro-wave-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Retro 80s sunset background */
+.retro-sunset {
+  background: linear-gradient(180deg, 
+    #e94560 0%,
+    #e94560 15%,
+    #f0866d 30%,
+    #e8b454 50%,
+    #16213e 80%,
+    #0f3460 100%
+  );
+}
+
+/* Retro cyberpunk grid background */
+.retro-cyberpunk {
+  background-color: #0a0e27;
+  background-image: 
+    linear-gradient(0deg, transparent 24%, rgba(233, 69, 96, 0.15) 25%, rgba(233, 69, 96, 0.15) 26%, transparent 27%, transparent 74%, rgba(233, 69, 96, 0.15) 75%, rgba(233, 69, 96, 0.15) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(233, 69, 96, 0.15) 25%, rgba(233, 69, 96, 0.15) 26%, transparent 27%, transparent 74%, rgba(233, 69, 96, 0.15) 75%, rgba(233, 69, 96, 0.15) 76%, transparent 77%, transparent),
+    linear-gradient(0deg, transparent 24%, rgba(79, 52, 96, 0.1) 25%, rgba(79, 52, 96, 0.1) 26%, transparent 27%, transparent 74%, rgba(79, 52, 96, 0.1) 75%, rgba(79, 52, 96, 0.1) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(79, 52, 96, 0.1) 25%, rgba(79, 52, 96, 0.1) 26%, transparent 27%, transparent 74%, rgba(79, 52, 96, 0.1) 75%, rgba(79, 52, 96, 0.1) 76%, transparent 77%, transparent);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: 0 0, 0 0, 0 0, 0 0;
+}
+
+/* Retro VHS glitch background */
+.retro-vhs {
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.retro-vhs::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(233, 69, 96, 0.03) 0px,
+      transparent 1px,
+      transparent 2px,
+      rgba(233, 69, 96, 0.03) 3px
+    );
+  pointer-events: none;
+  animation: retro-vhs-glitch 0.15s infinite;
+}
+
+@keyframes retro-vhs-glitch {
+  0% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes scan {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}

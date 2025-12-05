@@ -16,7 +16,7 @@ from app.utils.image import preprocess_image
 
 router = APIRouter(prefix="/chat", tags=["Chatbot"])
 
-# Load the brain tumor model once at startup
+# Load the brain tumor model once at startupa
 model = load_model("app/models/braintumor/brain_tumor_model.pth")
 
 async def get_db():
@@ -71,8 +71,10 @@ async def detect(file: UploadFile = File(...)):
         # Pass bytes to preprocess_image (you may need to update preprocess_image to accept bytes)
         image_tensor = preprocess_image(image_bytes)
         prediction_class, confidence_score = predict(model, image_tensor)
+        # Map class index to class name (0 = no tumor, 1 = tumor)
+        class_name = "tumor" if prediction_class == 1 else "no_tumor"
         return JSONResponse(content={
-            "predicted_class": prediction_class,
+            "predicted_class": class_name,
             "confidence_score": round(confidence_score, 4)
         })
     except Exception as e:
